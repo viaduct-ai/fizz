@@ -257,6 +257,38 @@ func TestNewSchemaFromStructErrors(t *testing.T) {
 	assert.Nil(t, sor)
 }
 
+type t1 struct {
+	A string `default:"A"`
+}
+
+func (*t1) TypeName() string {
+	return "BadName"
+}
+
+type t2 struct {
+	B string `default:"B"`
+}
+
+func (*t2) TypeName() string {
+	return "BadName"
+}
+
+// TestNewSchemaFromStructConflict tests the errors
+// case of generation of a schema from structs with conflicting names.
+func TestNewSchemaFromStructConflict(t *testing.T) {
+	g := gen(t)
+
+	s1 := g.newSchemaFromStruct(reflect.TypeOf(t1{}))
+	assert.NotNil(t, s1)
+
+	s2 := g.newSchemaFromStruct(reflect.TypeOf(t2{}))
+	assert.NotNil(t, s2)
+
+	errs := g.Errors()
+	assert.Len(t, errs, 1)
+	assert.Contains(t, errs[0].Error(), "'BadName'")
+}
+
 // TestNewSchemaFromStructFieldExampleValues tests the
 // case of setting example values.
 func TestNewSchemaFromStructFieldExampleValues(t *testing.T) {
