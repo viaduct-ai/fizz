@@ -346,6 +346,13 @@ func ResponseWithExamples(statusCode, desc string, model interface{}, headers []
 	}
 }
 
+// DefaultResponseExamples adds additional examples to the default response.
+func DefaultResponseExamples(examples map[string]interface{}) func(*openapi.OperationInfo) {
+	return func(o *openapi.OperationInfo) {
+		o.DefaultResponseExamples = examples
+	}
+}
+
 // Header adds a header to the operation.
 func Header(name, desc string, model interface{}) func(*openapi.OperationInfo) {
 	return func(o *openapi.OperationInfo) {
