@@ -1,7 +1,7 @@
 package extra_types
 
 import (
-	baseTypes "github.com/wI2L/fizz/openapi/test_types/base_types"
+	baseTypes "github.com/viaduct-ai/fizz/openapi/test_types/base_types"
 )
 
 type W struct {
