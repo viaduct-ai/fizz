@@ -7,8 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/loopfz/gadgeto/tonic"
 
-	"github.com/wI2L/fizz"
-	"github.com/wI2L/fizz/openapi"
+	"github.com/viaduct-ai/fizz"
+	"github.com/viaduct-ai/fizz/openapi"
 )
 
 // NewRouter returns a new router for the

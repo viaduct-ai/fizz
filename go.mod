@@ -1,4 +1,4 @@
-module github.com/wI2L/fizz
+module github.com/viaduct-ai/fizz
 
 go 1.26.0
 

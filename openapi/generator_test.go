@@ -3,8 +3,8 @@ package openapi
 import (
 	"encoding/json"
 	"fmt"
-	baseTypes "github.com/wI2L/fizz/openapi/test_types/base_types"
-	extraTypes "github.com/wI2L/fizz/openapi/test_types/extra_types"
+	baseTypes "github.com/viaduct-ai/fizz/openapi/test_types/base_types"
+	extraTypes "github.com/viaduct-ai/fizz/openapi/test_types/extra_types"
 	"io/ioutil"
 	"math"
 	"reflect"
